@@ -9,11 +9,21 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
   color: #333;
-  padding: 0 1rem;
+  background-color: #f5f5f5;
   margin: 0;
-  padding-top: 0.5rem;
+  padding: 0;
+}
+
+/* Añadir padding-top al body para compensar el header fixed */
+body {
+  padding-top: 70px; /* Valor base para desktop */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Valor ajustado para móvil */
+  }
 }
 
 article {
@@ -69,8 +79,10 @@ header {
   color: white;
   padding: 1rem 0;
   text-align: center;
-  position: sticky;
+  position: fixed; /* Cambiado a fixed para que siempre esté visible */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
@@ -79,6 +91,7 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
+/* Estilos para menú normal */
 nav ul {
   list-style: none;
   display: flex;
@@ -103,6 +116,60 @@ nav ul li a:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transform: translateY(-2px);
   text-decoration: none;
+}
+
+/* Estilos para el menú hamburguesa en móvil */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 1001;
+  background-color: #0a3278;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu-icon span,
+.menu-icon span::before,
+.menu-icon span::after {
+  background-color: white;
+  height: 3px;
+  width: 26px;
+  border-radius: 3px;
+  position: absolute;
+  display: block;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.menu-icon span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-icon span::before,
+.menu-icon span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon span::before {
+  top: -8px;
+}
+
+.menu-icon span::after {
+  top: 8px;
 }
 
 /* Footer */
@@ -405,13 +472,269 @@ body:not(.noticias-page) .carrusel {
   background-color: #083275;
 }
 
+/* Sección de boletín */
+.seccion-boletin {
+  background: linear-gradient(135deg, #0b3d91, #1e60d0);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .seccion-boletin {
+    max-width: 97vw;
+    margin: 1.2rem 1vw;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .seccion-boletin {
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+  }
+}
+
+.seccion-boletin::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 40%);
+  opacity: 0.8;
+}
+
+.seccion-boletin h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.8rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.seccion-boletin p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.seccion-boletin form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.seccion-boletin .input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.seccion-boletin label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  width: 100%;
+}
+
+.seccion-boletin input[type="email"] {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.seccion-boletin input[type="email"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.seccion-boletin .btn-suscribirse {
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #0b3d91;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.seccion-boletin .btn-suscribirse:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive: en pantallas pequeñas */
 @media (max-width: 768px) {
+  /* Menú móvil */
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    right: 10px;
+    top: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-icon:hover {
+    background-color: rgba(255,255,255,0.15);
+  }
+  
+  header {
+    padding: 1rem 0;
+    position: fixed; /* Mantenemos fixed para versión móvil también */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  
+  header h1 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-right: 50px; /* Espacio para el botón hamburguesa */
+  }
+  
+  nav {
+    width: 100%;
+  }
+  
   nav ul {
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0b3d91;
+    padding-top: 80px; /* Espacio para el header ajustado */
+    padding-bottom: 50px; /* Espacio al final */
+    gap: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 990; /* Menor que el header para que quede debajo */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 100vh;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   }
   
+  nav ul li {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  /* Estilo de los enlaces en el menú móvil */
+  nav ul li a {
+    padding: 1.2rem 2rem;
+    text-align: left;
+    font-size: 1.2rem;
+    border-radius: 0;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  /* Añadir indicador visual */
+  nav ul li a::after {
+    content: '›';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    opacity: 0.7;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a:active {
+    background-color: rgba(255,255,255,0.15);
+    padding-left: 2.5rem;
+    color: white;
+  }
+  
+  /* Checkbox hack para mostrar/ocultar menú */
+  #menu-toggle:checked ~ nav ul {
+    transform: translateY(0);
+  }
+  
+  /* Estilo de los enlaces en el menú móvil */
+  nav ul li a {
+    padding: 1.2rem 2rem;
+    text-align: left;
+    font-size: 1.2rem;
+    border-radius: 0;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  
+  /* Cuando se hace clic en un enlace, ocultar el menú */
+  nav ul li a:active ~ #menu-toggle {
+    transform: translateY(-100%);
+  }
+  
+  #menu-toggle:checked ~ .menu-icon {
+    background-color: rgba(255,255,255,0.15);
+  }
+  
+  #menu-toggle:checked ~ .menu-icon span {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  #menu-toggle:checked ~ .menu-icon span::before {
+    transform: rotate(45deg) translate(0px, 0px);
+    top: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  #menu-toggle:checked ~ .menu-icon span::after {
+    transform: rotate(-45deg) translate(0px, 0px);
+    top: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  /* Otros estilos responsivos */
   .opinion-container, .fact-container {
     flex-direction: column;
     align-items: flex-start;
@@ -425,5 +748,39 @@ body:not(.noticias-page) .carrusel {
   
   .noticia {
     flex: 0 0 250px;
+  }
+  
+  /* Mejorar estilos generales en móvil */
+  section {
+    padding: 15px;
+  }
+  
+  .carrusel-contenedor {
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  /* Boletín en móvil */
+  .seccion-boletin {
+    padding: 1.5rem;
+  }
+  
+  .seccion-boletin form {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .seccion-boletin .input-group {
+    flex-direction: column;
+  }
+  
+  .seccion-boletin input[type="email"] {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  
+  .seccion-boletin .btn-suscribirse {
+    width: 100%;
+    padding: 14px;
   }
 }

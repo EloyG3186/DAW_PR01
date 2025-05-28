@@ -3,24 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T&D Informa - Noticias</title>
-    <link rel="stylesheet" href="/css/estilos_limpio.css">
+    <link rel="stylesheet" href="css/estilos_limpio.css">
 </head>
 
 <body class="noticias-page">
     <header>
         <h1>T&D Informa</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+        </label>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="noticias.html#politica">Política</a></li>
-                <li><a href="noticias.html#economia">Economía</a></li>
-                <li><a href="noticias.html#sociedad">Sociedad</a></li>
-                <li><a href="noticias.html#tecnologia">Tecnología</a></li>
-                <li><a href="noticias.html#medioambiente">Medio Ambiente</a></li>
-                <li><a href="noticias.html#seguridad">Seguridad</a></li>
-                <li><a href="noticias.html#deportes">Deportes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.html" onclick="document.getElementById('menu-toggle').checked = false;">Inicio</a></li>
+                <li><a href="noticias.html#politica" onclick="document.getElementById('menu-toggle').checked = false;">Política</a></li>
+                <li><a href="noticias.html#economia" onclick="document.getElementById('menu-toggle').checked = false;">Economía</a></li>
+                <li><a href="noticias.html#sociedad" onclick="document.getElementById('menu-toggle').checked = false;">Sociedad</a></li>
+                <li><a href="noticias.html#tecnologia" onclick="document.getElementById('menu-toggle').checked = false;">Tecnología</a></li>
+                <li><a href="noticias.html#medioambiente" onclick="document.getElementById('menu-toggle').checked = false;">Medio Ambiente</a></li>
+                <li><a href="noticias.html#seguridad" onclick="document.getElementById('menu-toggle').checked = false;">Seguridad</a></li>
+                <li><a href="noticias.html#deportes" onclick="document.getElementById('menu-toggle').checked = false;">Deportes</a></li>
+                <li><a href="contacto.html" onclick="document.getElementById('menu-toggle').checked = false;">Contacto</a></li>
             </ul>
         </nav>
     </header>
