@@ -20,7 +20,7 @@ T&D Informa es un portal de noticias enfocado en la actualidad ecuatoriana, desa
 ```
 /
 ├── css/                  # Hojas de estilo
-│   └── estilos_limpio.css # Archivo CSS de estilos.
+│   └── estilos.css       # Archivo CSS de estilos.
 ├── img/                  # Imágenes del sitio
 │   ├── Medioambiente/    # Imágenes relacionadas con medio ambiente
 │   ├── Politica/         # Imágenes relacionadas con política
