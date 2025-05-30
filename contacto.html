@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T&D Informa - Contacto</title>
-  <link rel="stylesheet" href="css/estilos_limpio.css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
@@ -18,13 +18,20 @@
     <nav>
       <ul>
         <li><a href="index.html" onclick="document.getElementById('menu-toggle').checked = false;">Inicio</a></li>
-        <li><a href="noticias.html#politica" onclick="document.getElementById('menu-toggle').checked = false;">Política</a></li>
-        <li><a href="noticias.html#economia" onclick="document.getElementById('menu-toggle').checked = false;">Economía</a></li>
-        <li><a href="noticias.html#sociedad" onclick="document.getElementById('menu-toggle').checked = false;">Sociedad</a></li>
-        <li><a href="noticias.html#tecnologia" onclick="document.getElementById('menu-toggle').checked = false;">Tecnología</a></li>
-        <li><a href="noticias.html#medioambiente" onclick="document.getElementById('menu-toggle').checked = false;">Medio Ambiente</a></li>
-        <li><a href="noticias.html#seguridad" onclick="document.getElementById('menu-toggle').checked = false;">Seguridad</a></li>
-        <li><a href="noticias.html#deportes" onclick="document.getElementById('menu-toggle').checked = false;">Deportes</a></li>
+        <li><a href="noticias.html#politica"
+            onclick="document.getElementById('menu-toggle').checked = false;">Política</a></li>
+        <li><a href="noticias.html#economia"
+            onclick="document.getElementById('menu-toggle').checked = false;">Economía</a></li>
+        <li><a href="noticias.html#sociedad"
+            onclick="document.getElementById('menu-toggle').checked = false;">Sociedad</a></li>
+        <li><a href="noticias.html#tecnologia"
+            onclick="document.getElementById('menu-toggle').checked = false;">Tecnología</a></li>
+        <li><a href="noticias.html#medioambiente"
+            onclick="document.getElementById('menu-toggle').checked = false;">Medio Ambiente</a></li>
+        <li><a href="noticias.html#seguridad"
+            onclick="document.getElementById('menu-toggle').checked = false;">Seguridad</a></li>
+        <li><a href="noticias.html#deportes"
+            onclick="document.getElementById('menu-toggle').checked = false;">Deportes</a></li>
         <li><a href="contacto.html" onclick="document.getElementById('menu-toggle').checked = false;">Contacto</a></li>
       </ul>
     </nav>
@@ -37,22 +44,22 @@
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
       </div>
-      
+
       <div class="campo-formulario">
         <label for="correo">Correo electrónico:</label>
         <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
       </div>
-      
+
       <div class="campo-formulario">
         <label for="asunto">Asunto:</label>
         <input type="text" id="asunto" name="asunto" placeholder="Asunto de tu mensaje" required>
       </div>
-      
+
       <div class="campo-formulario">
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" placeholder="Escribe aquí tu mensaje..." required></textarea>
       </div>
-      
+
       <button type="submit" class="boton-enviar">Enviar Mensaje</button>
     </form>
   </section>

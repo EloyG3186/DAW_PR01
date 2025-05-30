@@ -20,8 +20,7 @@ T&D Informa es un portal de noticias enfocado en la actualidad ecuatoriana, desa
 ```
 /
 ├── css/                  # Hojas de estilo
-│   ├── estilos.css       # Archivo CSS original
-│   └── estilos_limpio.css # Archivo CSS optimizado
+│   └── estilos_limpio.css # Archivo CSS de estilos.
 ├── img/                  # Imágenes del sitio
 │   ├── Medioambiente/    # Imágenes relacionadas con medio ambiente
 │   ├── Politica/         # Imágenes relacionadas con política
@@ -37,26 +36,9 @@ T&D Informa es un portal de noticias enfocado en la actualidad ecuatoriana, desa
 - HTML5
 - CSS3 (Flexbox, Media Queries, Animaciones)
 
-## Instalación y Uso
-
-1. Clona este repositorio
-2. Abre cualquiera de los archivos HTML en tu navegador
-
-```bash
-git clone https://github.com/tu-usuario/t-d-informa.git
-cd t-d-informa
-```
-
-## Optimizaciones Realizadas
-
-- Reducción del tamaño del archivo CSS de 70KB a 6KB (91% de reducción)
-- Eliminación de código redundante
-- Corrección de errores de sintaxis
-- Mejora del carrusel de noticias con navegación manual y automática
-
 ## Autor
 
-- Desarrollado como proyecto académico para la asignatura de Desarrollo de Aplicaciones Web
+- Eloy González - Desarrollado como proyecto académico para la asignatura de Desarrollo de Aplicaciones Web
 
 ## Licencia
 
